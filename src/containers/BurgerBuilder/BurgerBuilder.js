@@ -18,7 +18,6 @@ class BurgerBuilder extends Component {
     //     super(props);
 
 	// }
-	// Deneme
 
     state = {
         ingredients: {
