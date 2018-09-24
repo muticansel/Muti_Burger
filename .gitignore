@@ -6,6 +6,9 @@
 # testing
 /coverage
 
+# CONSTANTS
+/src/constants.js
+
 # production
 /build
 

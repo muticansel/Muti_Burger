@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import * as actionTypes from './actionTypes';
+import { CONSTANTS } from '../../constants';
 
 export const authStart = () => {
     return {
@@ -49,9 +50,10 @@ export const auth = (email, password, isSignup) => {
             returnSecureToken: true
         };
 
-        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBV0ULSrXEhVi5ZZbObZpAlW0Bxp0PM7T4';
+		// These urls depends on the application and are stored in constant.js file
+        let url = CONSTANTS.API_SIGNUP_URL + CONSTANTS.APIKEY;
         if (!isSignup) {
-            url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBV0ULSrXEhVi5ZZbObZpAlW0Bxp0PM7T4';
+            url = CONSTANTS.API_SIGNIN_URL + CONSTANTS.APIKEY;
         }
 
         axios.post(url, authData)
